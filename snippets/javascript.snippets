@@ -105,6 +105,19 @@ snippet rslc
 	}
 
 	export default $1
+snippet rrcc
+	import { connect } from 'react-redux';
+	import ${1:ChildClassName} from '${2}';
+
+	const mapStateToProps = (state) => {
+  		return {
+  		}
+	};
+
+	const $1Container = connect(mapStateToProps, {${3}})($1);
+
+	export default $1Container;
+
 snippet ren
 	render() {
 		return (
