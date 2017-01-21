@@ -105,6 +105,21 @@ snippet rslc
 	}
 
 	export default $1
+snippet rsfc
+	import React, { PropTypes } from 'react'
+	import './$1.css'
+
+	const ${1:ClassName} = (props) => {
+		return (
+			${0:<div />}
+		)
+	}
+
+	$1.propTypes = {
+
+	}
+
+	export default $1
 snippet rrcc
 	import { connect } from 'react-redux';
 	import ${1:ChildClassName} from '${2}';
