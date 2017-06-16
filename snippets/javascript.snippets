@@ -50,10 +50,11 @@ snippet jsx
 	 */
 snippet pt
 	propTypes: {
-		${1}: React.PropTypes.${2:string}
+		${1}: PropTypes.${2:string}
 	}
 snippet rcc
-	import React, { PropTypes, Component } from 'react'
+	import React, { Component } from 'react'
+	import PropTypes from 'prop-types'
 
 	class ${1:ClassName} extends Component {
 
@@ -91,7 +92,8 @@ snippet slc
 
 	}
 snippet rslc
-	import React, { PropTypes } from 'react'
+	import React from 'react'
+	import PropTypes from 'prop-types'
 	import styles from './$1.scss'
 
 	const ${1:ClassName} = (props) => {
@@ -106,7 +108,8 @@ snippet rslc
 
 	export default $1
 snippet rsfc
-	import React, { PropTypes } from 'react'
+	import React from 'react'
+	import PropTypes from 'prop-types'
 	import './$1.css'
 
 	const ${1:ClassName} = (props) => {
@@ -123,7 +126,7 @@ snippet rsfc
 snippet rrcc
 	import { connect } from 'react-redux';
 	import ${1:ChildClassName} from '${2}';
-	
+
 	const mapStateToProps = (state) => {
 		return {
 			${3}
