@@ -44,10 +44,6 @@ snippet gis
 	}
 snippet ism
 	isMounted()
-snippet jsx
-	/**
-	 * @jsx React.DOM
-	 */
 snippet pt
 	propTypes: {
 		${1}: PropTypes.${2:string}
@@ -125,17 +121,23 @@ snippet rsfc
 	export default $1
 snippet rrcc
 	import { connect } from 'react-redux';
-	import ${1:ChildClassName} from '${2}';
+	import build from 'redux-object';
+
+	import ${1:ChildClassName} from './$1';
 
 	const mapStateToProps = (state) => {
+		return {
+			${2}
+		};
+	};
+
+	const mapDispatchToProps = (dispatch) => {
 		return {
 			${3}
 		};
 	};
 
-	const $1Container = connect(mapStateToProps, {${4}})($1);
-
-	export default $1Container;
+	export default connect(mapStateToProps, mapDispatchToProps)($1);
 snippet ren
 	render() {
 		return (
